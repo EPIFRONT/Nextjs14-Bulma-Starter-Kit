@@ -1,0 +1,25 @@
+@charset "utf-8";
+@use "sass:math";
+
+$purple: #8a4d76;
+$pink: #fa7c91;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+// Path to Bulma's sass folder with custom configurations
+@forward "bulma/sass" with (
+  $family-primary: '"Inter", sans-serif',
+  $grey-dark: $brown,
+  $grey-light: $beige-light,
+  $primary: $purple,
+  $link: $pink,
+  $control-border-width: 2px,
+  $input-shadow: none
+);
+
+// Function
+@function crem($value) {
+  $remValue: math.div($value, $body-size) + rem;
+  @return $remValue;
+}
